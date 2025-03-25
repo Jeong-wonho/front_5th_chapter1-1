@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>항해플러스 SNS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // URL에서 경로 추출
+      const path = window.location.pathname;
+      // 쿼리 문자열과 해시 값 저장
+      const query = window.location.search || "";
+      const hash = window.location.hash || "";
+
+      // 세션 스토리지에 원래 URL 저장
+      sessionStorage.setItem("redirect", path + query + hash);
+
+      // 루트 페이지로 리다이렉션
+      const repo = "/front_5th_chapter1-1"; // GitHub 레포지토리 이름으로 변경
+      window.location.href = repo === "/" ? "/" : repo + "/";
+    </script>
     <script type="module" crossorigin src="/front_5th_chapter1-1/assets/index-DwZ0jebl.js"></script>
   </head>
   <body>

@@ -10,7 +10,7 @@
     const path = '/' + pathSegments.slice(2).join('/');
     
     // URL 파라미터와 해시 저장
-    const query = window.location.search || '';
+    const query = window.location.pathname || '';
     const hash = window.location.hash || '';
     
     // 세션 스토리지에 저장

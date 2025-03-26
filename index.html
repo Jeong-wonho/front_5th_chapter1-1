@@ -9,12 +9,14 @@
       (function () {
         // 리다이렉션 정보 가져오기
         const redirect = sessionStorage.getItem("spa-redirect");
+        console.log("redirect", redirect);
         if (redirect) {
           // 세션 스토리지 지우기
           sessionStorage.removeItem("spa-redirect");
 
           // 히스토리 API로 주소 변경 (새로고침 없음)
           const newPath = "/front_5th_chapter1-1" + redirect;
+          console.log("newPath", newPath);
           history.replaceState(null, null, newPath);
 
           console.log("리다이렉션 성공:", newPath);

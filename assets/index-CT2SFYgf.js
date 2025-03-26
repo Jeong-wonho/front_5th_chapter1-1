@@ -1,22 +1,22 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))l(o);new MutationObserver(o=>{for(const r of o)if(r.type==="childList")for(const d of r.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&l(d)}).observe(document,{childList:!0,subtree:!0});function s(o){const r={};return o.integrity&&(r.integrity=o.integrity),o.referrerPolicy&&(r.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?r.credentials="include":o.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function l(o){if(o.ep)return;o.ep=!0;const r=s(o);fetch(o.href,r)}})();const g=()=>(console.log("Header component 랜더링"),`<header class="bg-blue-600 text-white p-4 sticky top-0">
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const n of o)if(n.type==="childList")for(const u of n.addedNodes)u.tagName==="LINK"&&u.rel==="modulepreload"&&s(u)}).observe(document,{childList:!0,subtree:!0});function l(o){const n={};return o.integrity&&(n.integrity=o.integrity),o.referrerPolicy&&(n.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?n.credentials="include":o.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(o){if(o.ep)return;o.ep=!0;const n=l(o);fetch(o.href,n)}})();const g=()=>(console.log("Header component 랜더링"),`<header class="bg-blue-600 text-white p-4 sticky top-0">
         <h1 class="text-2xl font-bold">항해플러스</h1>
-    </header>`),p=()=>{const e="/front_5th_chapter1-1/",s=window.location.pathname.includes("hash.html")?"hash":"browser",l=()=>s==="hash"?window.location.hash.slice(1)||"/":window.location.pathname;console.log("getCurrentPath",l());const o=localStorage.getItem("user"),r=l(),d=r==="/",v=r==="/profile",m=d?"text-blue-600 font-bold":"text-gray-600",y=v?"text-blue-600 font-bold":"text-gray-600",i=f=>s==="hash"?`#${f}`:`${e}${f}`;console.log("getHref",i());let u;return o?u=`
-      <li><a href="${i("/")}" class="${m}">홈</a></li>
+    </header>`),p=()=>{const e="/front_5th_chapter1-1/",l=window.location.pathname.includes("hash.html")?"hash":"browser",s=()=>l==="hash"?window.location.hash.slice(1)||"/":window.location.pathname;console.log("getCurrentPath",s());const o=localStorage.getItem("user"),n=s(),u=n==="/",v=n==="/profile",f=u?"text-blue-600 font-bold":"text-gray-600",y=v?"text-blue-600 font-bold":"text-gray-600",i=c=>{if(!c)return e;if(l==="hash")return`#${c}`;{if(c==="/")return e;const w=c.startsWith("/")?c.slice(1):c;return`${e.endsWith("/")?e.slice(0,-1):e}/${w}`}};console.log("getHref",i());let m;return o?m=`
+      <li><a href="${i("/")}" class="${f}">홈</a></li>
       <li><a href="${i("/profile")}" class="${y}">프로필</a></li>
       <li><a id="logout" href="${i("/logout")}" class="text-gray-600">로그아웃</a></li>
-    `:u=`
-      <li><a href="${i("/")}" class="${m}">홈</a></li>
+    `:m=`
+      <li><a href="${i("/")}" class="${f}">홈</a></li>
       <li><a href="${i("/login")}" class="text-gray-600">로그인</a></li>
     `,`
     <nav class="bg-white shadow-md p-2 sticky top-14">
       <ul class="flex justify-around">
-        ${u}
+        ${m}
       </ul>
     </nav>
   `},b=()=>(console.log("Footer"),`<footer class="bg-gray-200 p-4 text-center">
         <p>&copy; 2024 항해플러스. All rights reserved.</p>
       </footer>
-`),w=[{profileImage:"https://placehold.co/40/FFC107/FFFFFF?text=YS",name:"유승민",time:"30분 전",content:"오늘 날씨 너무 좋네요! 다들 즐거운 하루 보내세요~"},{profileImage:"https://placehold.co/40/2196F3/FFFFFF?text=JH",name:"김정현",time:"1시간 전",content:"새로운 프로젝트 시작! 다들 응원해주세요!"},{profileImage:"https://placehold.co/40/4CAF50/FFFFFF?text=EJ",name:"이은지",time:"2시간 전",content:"오늘 점심은 뭘 먹을까요? 맛집 추천 받아요!"},{profileImage:"https://placehold.co/40/9C27B0/FFFFFF?text=SM",name:"박세민",time:"3시간 전",content:"주말에 등산 갈 사람? 같이 가요~"},{profileImage:"https://placehold.co/40/FF5722/FFFFFF?text=HJ",name:"최현지",time:"4시간 전",content:"새로 나온 영화 봤는데 너무 재밌어요! 강추!"}],F=()=>{const e=w.map(t=>`
+`),F=[{profileImage:"https://placehold.co/40/FFC107/FFFFFF?text=YS",name:"유승민",time:"30분 전",content:"오늘 날씨 너무 좋네요! 다들 즐거운 하루 보내세요~"},{profileImage:"https://placehold.co/40/2196F3/FFFFFF?text=JH",name:"김정현",time:"1시간 전",content:"새로운 프로젝트 시작! 다들 응원해주세요!"},{profileImage:"https://placehold.co/40/4CAF50/FFFFFF?text=EJ",name:"이은지",time:"2시간 전",content:"오늘 점심은 뭘 먹을까요? 맛집 추천 받아요!"},{profileImage:"https://placehold.co/40/9C27B0/FFFFFF?text=SM",name:"박세민",time:"3시간 전",content:"주말에 등산 갈 사람? 같이 가요~"},{profileImage:"https://placehold.co/40/FF5722/FFFFFF?text=HJ",name:"최현지",time:"4시간 전",content:"새로 나온 영화 봤는데 너무 재밌어요! 강추!"}],$=()=>{const e=F.map(t=>`
     <div class="bg-white rounded-lg shadow p-4">
       <div class="flex items-center mb-2">
         <img src="${t.profileImage}" alt="프로필" class="rounded-full mr-2">
@@ -65,7 +65,7 @@
       </a>
     </div>
   </main>
-`,$=()=>`
+`,I=()=>`
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
       <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -87,7 +87,7 @@
       </div>
     </div>
   </main>
-`,c={getUser(e){return JSON.parse(localStorage.getItem(e))},setUser(e,t){localStorage.setItem(e,JSON.stringify(t))},initUser(e){localStorage.removeItem(e)}},I=()=>{const e=c.getUser("user")||{username:"",email:"",bio:""};return`
+`,d={getUser(e){return JSON.parse(localStorage.getItem(e))},setUser(e,t){localStorage.setItem(e,JSON.stringify(t))},initUser(e){localStorage.removeItem(e)}},P=()=>{const e=d.getUser("user")||{username:"",email:"",bio:""};return`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
       ${g()}
@@ -117,4 +117,4 @@
       ${b()}
     </div>
   </div>
-  `},n="/front_5th_chapter1-1/",x={[n+"login"]:$,[n+"profile"]:I,[n]:F,[n+"error"]:h};console.log("routePath",{routePath:x});const E=e=>{const t=x[e];return typeof t=="function"?t():h()},P=()=>{console.log("logoutUser 실행"),c.initUser("user")},L=e=>{if(e.target.tagName==="A"){e.preventDefault();const t=e.target.getAttribute("href");if(t==="/logout"){console.log("logout 실행"),P(),a(n+"login");return}a(t)}},S=e=>{e.preventDefault();const t=document.getElementById("username").value,s=document.getElementById("userPw").value;if(console.log("email",t),console.log("password",s),t==="testuser"){const l={username:t,email:"",bio:""};c.setUser("user",l),a(n+"profile")}else alert(!t||!s?"이름 또는 비밀번호를 입력해주세요.":"이름 또는 비밀번호가 일치하지 않습니다.")},U=e=>{e.preventDefault();const t=document.getElementById("username").value.trim(),s=document.getElementById("email").value.trim(),l=document.getElementById("bio").value.trim();if(t){const o={username:t,email:s,bio:l};c.setUser("user",o),location.reload()}},a=e=>{console.log("navigateTo",e),history.pushState(null,"",e);const t=document.getElementById("root");if(t.innerHTML=E(e),e===n+"login"){if(c.getUser("user")){a(n+"profile");return}const l=document.getElementById("login-form");l&&l.addEventListener("submit",S)}if(e===n+"profile"){const s=c.getUser("user");if(console.log("loginInfo",s),!s){a(n+"login");return}const l=document.getElementById("profile-form");l&&l.addEventListener("submit",U)}if(e!==n+"login"&&e!==n+"logout"){console.log("login or logout");const s=document.querySelector("nav");s&&s.addEventListener("click",l=>{l.target.tagName==="A"&&L(l)})}};document.addEventListener("DOMContentLoaded",()=>{a(location.pathname)});window.addEventListener("popstate",()=>{console.log("popstate 이벤트 처리"),a(location.pathname)});
+  `},r="/front_5th_chapter1-1/",x={[r+"login"]:I,[r+"profile"]:P,[r]:$,[r+"error"]:h};console.log("routePath",{routePath:x});const E=e=>{const t=x[e];return typeof t=="function"?t():h()},L=()=>{console.log("logoutUser 실행"),d.initUser("user")},U=e=>{if(e.target.tagName==="A"){e.preventDefault();const t=e.target.getAttribute("href");if(t==="/logout"){console.log("logout 실행"),L(),a(r+"login");return}a(t)}},S=e=>{e.preventDefault();const t=document.getElementById("username").value,l=document.getElementById("userPw").value;if(console.log("email",t),console.log("password",l),t==="testuser"){const s={username:t,email:"",bio:""};d.setUser("user",s),a(r+"profile")}else alert(!t||!l?"이름 또는 비밀번호를 입력해주세요.":"이름 또는 비밀번호가 일치하지 않습니다.")},B=e=>{e.preventDefault();const t=document.getElementById("username").value.trim(),l=document.getElementById("email").value.trim(),s=document.getElementById("bio").value.trim();if(t){const o={username:t,email:l,bio:s};d.setUser("user",o),location.reload()}},a=e=>{console.log("navigateTo",e),history.pushState(null,"",e);const t=document.getElementById("root");if(t.innerHTML=E(e),e===r+"login"){if(d.getUser("user")){a(r+"profile");return}const s=document.getElementById("login-form");s&&s.addEventListener("submit",S)}if(e===r+"profile"){const l=d.getUser("user");if(console.log("loginInfo",l),!l){a(r+"login");return}const s=document.getElementById("profile-form");s&&s.addEventListener("submit",B)}if(e!==r+"login"&&e!==r+"logout"){console.log("login or logout");const l=document.querySelector("nav");l&&l.addEventListener("click",s=>{s.target.tagName==="A"&&U(s)})}};document.addEventListener("DOMContentLoaded",()=>{console.log("DOMContentLoaded",location.pathname),a(location.pathname)});window.addEventListener("popstate",()=>{console.log("popstate 이벤트 처리"),a(location.pathname)});

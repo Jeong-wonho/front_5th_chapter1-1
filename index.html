@@ -6,25 +6,27 @@
     <title>항해플러스 SNS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      (function() {
-        // 세션 스토리지에서 원래 경로 가져오기
-        const redirect = sessionStorage.getItem('redirect');
-        // 세션 스토리지 초기화
-        sessionStorage.removeItem('redirect');
-        
-        // 원래 요청된 경로가 있고 현재 URL과 다른 경우, 히스토리 상태 변경
-        if (redirect && redirect !== window.location.pathname) {
-          // 브라우저 히스토리에 원래 URL 추가 (페이지 새로고침 없음)
-          history.replaceState(null, null, redirect);
-          
-          // SPA 라우터에 알림 (필요한 경우)
-          // history.pushState 이벤트는 기본적으로 발생하지 않으므로
-          // 수동으로 popstate 이벤트 발생
-          window.dispatchEvent(new Event('popstate'));
+      (function () {
+        // 리다이렉션 정보 가져오기
+        const redirect = sessionStorage.getItem("spa-redirect");
+        if (redirect) {
+          // 세션 스토리지 지우기
+          sessionStorage.removeItem("spa-redirect");
+
+          // 히스토리 API로 주소 변경 (새로고침 없음)
+          const newPath = "/front_5th_chapter1-1" + redirect;
+          history.replaceState(null, null, newPath);
+
+          console.log("리다이렉션 성공:", newPath);
+
+          // 라우터에 변경 알림
+          setTimeout(function () {
+            window.dispatchEvent(new Event("popstate"));
+          }, 0);
         }
       })();
     </script>
-    <script type="module" crossorigin src="/front_5th_chapter1-1/assets/index-DwZ0jebl.js"></script>
+    <script type="module" crossorigin src="/front_5th_chapter1-1/assets/index-ET0fUdl1.js"></script>
   </head>
   <body>
     <div id="root"></div>
